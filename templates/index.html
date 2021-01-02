@@ -30,9 +30,15 @@
 							<div class="logo"><a href="index.html">Travello</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
+									{% if user.is_authenticated %}
+									<li class="active"><a href="/">Home</a></li>
+									<li><a href="accounts/logout">Logout</a></li>
+									<li style="font-weight: 400; font-size: 16px; color: #FFFF; font-family: 'Oswald', sans-serif;">Hello {{user.username}}</li>
+									{% else %}
 									<li class="active"><a href="/">Home</a></li>
 									<li><a href="accounts/register">Register</a></li>
-<!--									<li><a href="#">Services</a></li>-->
+									<li><a href="accounts/login">Login</a></li>
+									{% endif %}
 <!--									<li><a href="news.html">News</a></li>-->
 <!--									<li><a href="contact.html">Contact</a></li>-->
 								</ul>
